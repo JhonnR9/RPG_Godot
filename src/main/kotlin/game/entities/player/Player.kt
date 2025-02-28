@@ -24,8 +24,9 @@ class Player : Character() {
         sprite = getNode(NodePath("Sprite")) as AnimatedSprite2D
     }
 
+    @RegisterFunction
     @ConnectSignal("ui_test")
-    fun ui_test(){
+    fun Test(){
         GD.print("Funcionou uhuuu")
     }
 

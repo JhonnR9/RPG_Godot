@@ -6,6 +6,7 @@ import godot.annotation.RegisterClass
 import godot.annotation.RegisterFunction
 import godot.core.Callable
 import godot.core.StringName
+import godot.core.toGodotName
 import godot.global.GD
 import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.reflect.full.findAnnotation
@@ -29,38 +30,40 @@ class DynamicSignalManager : Node() {
         node?.getChildren()?.forEach { child ->
             connectSignals(child)
             getAllChildren(child)
-
         }
     }
+    private fun findNodeWithSignal(signalName: StringName, node: Node?): List<Node> {
+        val list = mutableListOf<Node>()
+        node?.getChildren()?.forEach { child ->
+            if (child.hasSignal(signalName)) {
 
+                list += child
+
+            }
+            list += findNodeWithSignal(signalName, child)
+        }
+        return list
+    }
     private fun connectSignals(target: Node) {
         val kClass = target::class
 
         kClass.memberFunctions.forEach { function ->
             function.findAnnotation<ConnectSignal>()?.let { annotation ->
-                val signalName = StringName(annotation.signalName)
-                val methodName = StringName(function.name)
+                val signalName = annotation.signalName.toGodotName()
+                val methodName = function.name.toGodotName()
 
-                if (!target.hasSignal(signalName)) {
-                    GD.pushWarning("Signal '$signalName' not found in ${target.name}")
-                    return@forEach
-                }
+                findNodeWithSignal(signalName, getTree()?.root).forEach {
 
-                if (!target.hasMethod(methodName)) {
-                    GD.pushWarning("Method '$methodName' not found in ${target.name}")
-                    return@forEach
-                }
-
-                val result = target.connect(signalName, Callable(target, methodName))
-                if (result == Error.OK) {
-                    GD.print("Connected '${annotation.signalName}' to function '${function.name}' in ${target.name}")
-                } else {
-                    GD.pushWarning("Failed to connect '${annotation.signalName}' in ${target.name}")
+                    val result = it.connect(signalName, Callable(target, methodName))
+                    if (result == Error.OK) {
+                        GD.print("Connected '${annotation.signalName}' to function '${function.name}' in ${target.name}")
+                    } else {
+                        GD.pushWarning("Failed to connect '${annotation.signalName}' in ${target.name} with result: $result")
+                    }
                 }
             }
         }
     }
-
 
     @RegisterFunction
     fun _on_child_entered(node: Node) {

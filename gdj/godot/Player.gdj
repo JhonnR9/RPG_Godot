@@ -25,5 +25,6 @@ properties = [
 ]
 functions = [
     _ready,
+	test,
 	_process
 ]
