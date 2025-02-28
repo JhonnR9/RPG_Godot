@@ -1,7 +1,6 @@
 package game.entities.player;
 import game.entities.Character
-import game.statemachine.State;
-import godot.global.GD
+import game.core.statemachine.State;
 
 class IdleState (owner: Character) : State(owner) {
     override fun onStateEnter() {

@@ -1,4 +1,4 @@
-package game
+package game.core
 
 import godot.Error
 import godot.Node

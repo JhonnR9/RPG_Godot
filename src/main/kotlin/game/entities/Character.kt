@@ -4,7 +4,7 @@ import game.entities.player.IdleState
 import game.entities.player.RunState
 import godot.CharacterBody2D
 import godot.annotation.RegisterClass
-import game.statemachine.StateMachine
+import game.core.statemachine.StateMachine
 import godot.annotation.RegisterFunction
 import godot.core.Vector2
 

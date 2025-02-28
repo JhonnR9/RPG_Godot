@@ -1,7 +1,7 @@
 package game.entities.player
 
 import game.entities.Character
-import game.statemachine.State
+import game.core.statemachine.State
 import godot.core.Vector2
 
 class RunState(owner: Character): State(owner) {

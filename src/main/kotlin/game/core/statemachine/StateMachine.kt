@@ -1,4 +1,4 @@
-package game.statemachine
+package game.core.statemachine
 
 import godot.global.GD
 

@@ -7,9 +7,7 @@ import godot.annotation.RegisterClass
 import godot.annotation.RegisterFunction
 import godot.core.NodePath
 import godot.core.StringName
-import  game.ConnectSignal
-import godot.annotation.RegisterSignal
-import godot.core.signal0
+import  game.core.ConnectSignal
 import godot.global.GD
 
 
@@ -26,8 +24,8 @@ class Player : Character() {
 
     @RegisterFunction
     @ConnectSignal("ui_test")
-    fun Test(){
-        GD.print("Funcionou uhuuu")
+    fun Test(number: Int){
+        GD.print("Funcionou uhuuu $number")
     }
 
     @RegisterFunction
