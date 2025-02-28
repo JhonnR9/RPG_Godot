@@ -19,6 +19,6 @@ properties = [
 ]
 functions = [
     _ready,
-	_on_child_entered,
-	_on_child_exiting
+	on_child_entered,
+	on_child_exiting
 ]
