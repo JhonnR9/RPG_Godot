@@ -1,0 +1,10 @@
+.godot/
+/android/
+.gradle
+gradle
+.kotlin
+.idea
+build
+jre
+jre-amd64-windows/
+export

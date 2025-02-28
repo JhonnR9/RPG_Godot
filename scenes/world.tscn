@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdfbup5xwacwf"]
+
+[ext_resource type="Script" path="res://src/main/kotlin/game/DynamicSignalManager.kt" id="1_n65df"]
+[ext_resource type="PackedScene" uid="uid://210hyde6udnd" path="res://scenes/player.tscn" id="1_obf8p"]
+[ext_resource type="Script" path="res://src/main/kotlin/game/UTest.kt" id="1_t5nyl"]
+[ext_resource type="PackedScene" uid="uid://48ws3dudu220" path="res://scenes/npc.tscn" id="2_77d0x"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_n65df")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_t5nyl")
+
+[node name="Player" parent="." instance=ExtResource("1_obf8p")]
+z_index = 2
+position = Vector2(80, 78)
+
+[node name="Player2" parent="." instance=ExtResource("2_77d0x")]
+position = Vector2(80, 54)
