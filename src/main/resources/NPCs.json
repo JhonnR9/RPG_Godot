@@ -1,0 +1,39 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Jane",
+      "age": 22,
+      "birthday": "2011-11-02",
+      "dialogs": [
+        {
+          "id": 1,
+          "text": "Hello adventurer, can I help you?",
+          "choices": [
+            {
+              "id": 1,
+              "text" :"yeah",
+              "next": "2"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "What do you think about this boy?",
+          "choices": [
+            {
+              "id": 1,
+              "text" :"he's a good boy",
+              "next": "-1"
+            },
+            {
+              "id": 2,
+              "text" :"he's a bad boy",
+              "next": "-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

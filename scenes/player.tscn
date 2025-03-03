@@ -1,7 +1,23 @@
-[gd_scene load_steps=29 format=3 uid="uid://210hyde6udnd"]
+[gd_scene load_steps=34 format=3 uid="uid://210hyde6udnd"]
 
 [ext_resource type="Script" path="res://src/main/kotlin/game/entities/player/Player.kt" id="1_78a1b"]
+[ext_resource type="Shader" path="res://scenes/player.gdshader" id="2_0hw8m"]
 [ext_resource type="Texture2D" uid="uid://cx5i4r2yok0bt" path="res://images/char22.png" id="2_35rxn"]
+[ext_resource type="Texture2D" uid="uid://b1dfpkx73sk27" path="res://images/square.png" id="3_vfnya"]
+[ext_resource type="Shader" path="res://scenes/player_shodown.gdshader" id="4_dsnsj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvw55"]
+shader = ExtResource("4_dsnsj")
+shader_parameter/h_factor = 0.02
+shader_parameter/s_factor = -0.295
+shader_parameter/l_factor = 0.155
+shader_parameter/radius = 0.39
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ck502"]
+shader = ExtResource("2_0hw8m")
+shader_parameter/h_factor = 0.001
+shader_parameter/s_factor = -0.18
+shader_parameter/l_factor = 0.26
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hcopy"]
 atlas = ExtResource("2_35rxn")
@@ -222,7 +238,14 @@ light_mask = 2
 visibility_layer = 2
 script = ExtResource("1_78a1b")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yvw55")
+position = Vector2(4.76837e-07, 12.25)
+scale = Vector2(0.5625, 0.484375)
+texture = ExtResource("3_vfnya")
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ck502")
 sprite_frames = SubResource("SpriteFrames_ernea")
 animation = &"idle_up"
 frame_progress = 0.813271

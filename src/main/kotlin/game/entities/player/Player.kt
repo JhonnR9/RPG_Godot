@@ -23,10 +23,12 @@ class Player : Character() {
     }
 
     @RegisterFunction
-    @ConnectSignal("ui_test")
+    @ConnectSignal("ui_test", "/root/World/Node2D", isRecursive = false)
     fun Test(number: Int){
         GD.print("Funcionou uhuuu $number")
     }
+
+
 
     @RegisterFunction
     override fun _process(delta: Double) {

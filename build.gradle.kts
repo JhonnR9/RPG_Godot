@@ -1,5 +1,7 @@
 plugins {
     id("com.utopia-rise.godot-kotlin-jvm") version "0.11.0-4.3"
+
+    kotlin("plugin.serialization") version "2.1.10"
 }
 
 repositories {
@@ -11,6 +13,9 @@ kotlin {
 }
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+
 }
 
 
@@ -20,8 +25,8 @@ godot {
     // the script registration which you'll attach to nodes are generated into this directory
     registrationFileBaseDir.set(projectDir.resolve("gdj"))
 
-	// Create .gdj files from all JVM scripts
-	isRegistrationFileGenerationEnabled.set(true)
+    // Create .gdj files from all JVM scripts
+    isRegistrationFileGenerationEnabled.set(true)
 
     // defines whether the script registration files should be generated hierarchically according to the classes package path or flattened into `registrationFileBaseDir`
     //isRegistrationFileHierarchyEnabled.set(true)
@@ -46,10 +51,4 @@ godot {
     //windowsDeveloperVCVarsPath.set(File("WINDOWS_DEVELOPER_VS_VARS_PATH"))
     //isIOSExportEnabled.set(IS_IOS_ENABLED)
 
-	// --------Library authors------------
-
-	// library setup. See: https://godot-kotl.in/en/stable/develop-libraries/
-    //classPrefix.set("MyCustomClassPrefix")
-    //projectName.set("LibraryProjectName")
-    //projectName.set("LibraryProjectName")
 }
