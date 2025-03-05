@@ -23,7 +23,7 @@ class Player : Character() {
     }
 
     @RegisterFunction
-    @ConnectSignal("ui_test", "/root/World/Node2D", isRecursive = false)
+    @ConnectSignal("ui_test")
     fun Test(number: Int){
         GD.print("Funcionou uhuuu $number")
     }

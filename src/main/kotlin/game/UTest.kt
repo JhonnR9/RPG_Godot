@@ -21,19 +21,19 @@ class UTest: Node() {
     @RegisterFunction
     override fun _ready() {
         super._ready()
-        val json = JsonDataParse("src/main/resources/NPCs.json")
+       /* val json = JsonDataParse("src/main/resources/NPCs.json")
         val file = Json.encodeToString(json.data)
         val repository = Repository()
         repository.save(file)
         val text = repository.getData()
-        GD.print(text)
+        GD.print(text)*/
     }
 
     @RegisterFunction
     override fun _process(delta: Double) {
         super._process(delta)
         if (Input.isActionJustPressed(StringName("Test"))) {
-            //uiTest.emitSignal(999)
+            uiTest.emitSignal(999)
         }
     }
 

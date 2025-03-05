@@ -6,6 +6,7 @@ import godot.annotation.RegisterClass
 import godot.annotation.RegisterFunction
 import  game.core.ConnectSignal
 import godot.Node
+
 import godot.core.Callable
 import godot.core.NodePath
 import godot.core.toGodotName
@@ -23,13 +24,9 @@ class InventoryUi: Control() {
 
             }
         }
-        GD.print(getPath().path)
+        //GD.print(getPath().path)
     }
 
-    @ConnectSignal("mouse_entered")
-    @RegisterFunction
-    fun onMouseEntered(){
-        GD.print("ok")
-    }
+
 
 }

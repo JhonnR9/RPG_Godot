@@ -41,7 +41,6 @@ class Repository {
     }
 
     fun getData(): Any? {
-        GD.print(getSaveFileName())
         val saveFile = File(getSaveFileName())
         if (!saveFile.exists()) {
             return null

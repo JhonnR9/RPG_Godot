@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqsjstxolmv16"]
+[gd_scene load_steps=9 format=3 uid="uid://cqsjstxolmv16"]
 
 [ext_resource type="Texture2D" uid="uid://b1dfpkx73sk27" path="res://images/square.png" id="1_c810o"]
 [ext_resource type="Script" path="res://src/main/kotlin/game/InventoryUI.kt" id="1_publb"]
 [ext_resource type="LabelSettings" uid="uid://dj5h61lg6ml70" path="res://scenes/Invenctory.tres" id="2_3w77p"]
 [ext_resource type="FontFile" uid="uid://c5ysehpj2av5v" path="res://pixel-dungeons.ttf" id="2_i8xd2"]
+[ext_resource type="Script" path="res://src/main/kotlin/game/IventorySlote.kt" id="3_wnmbk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37pvn"]
 bg_color = Color(0.72, 0.43272, 0.3096, 0.568627)
@@ -87,6 +88,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
 [node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote"]
 layout_mode = 2
 texture = ExtResource("1_c810o")
+script = ExtResource("3_wnmbk")
 
 [node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote"]
 layout_mode = 2
@@ -105,6 +107,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
 [node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote2"]
 layout_mode = 2
 texture = ExtResource("1_c810o")
+script = ExtResource("3_wnmbk")
 
 [node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote2"]
 layout_mode = 2
@@ -121,6 +124,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
 [node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote3"]
 layout_mode = 2
 texture = ExtResource("1_c810o")
+script = ExtResource("3_wnmbk")
 
 [node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote3"]
 layout_mode = 2
@@ -137,136 +141,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
 [node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote4"]
 layout_mode = 2
 texture = ExtResource("1_c810o")
+script = ExtResource("3_wnmbk")
 
 [node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote4"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote5" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote5"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote5"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote6" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote6"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote6"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote7" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote7"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote7"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote8" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote8"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote8"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote9" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote9"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote9"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote10" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote10"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote10"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote11" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote11"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote11"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-label_settings = ExtResource("2_3w77p")
-vertical_alignment = 2
-
-[node name="slote12" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
-
-[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote12"]
-layout_mode = 2
-texture = ExtResource("1_c810o")
-
-[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote12"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

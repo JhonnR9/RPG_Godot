@@ -1,14 +1,12 @@
 // THIS FILE IS GENERATED! DO NOT EDIT OR DELETE IT. EDIT OR DELETE THE ASSOCIATED SOURCE CODE FILE INSTEAD
 // Note: You can however freely move this file inside your godot project if you want. Keep in mind however, that if you rename the originating source code file, this file will be deleted and regenerated as a new file instead of being updated! Other modifications to the source file however, will result in this file being updated.
 
-registeredName = InventoryUi
-fqName = game.InventoryUi
-relativeSourcePath = src/main/kotlin/game/InventoryUI.kt
-baseType = Control
+registeredName = IventorySlote
+fqName = game.IventorySlote
+relativeSourcePath = src/main/kotlin/game/IventorySlote.kt
+baseType = Node
 supertypes = [
-    godot.Control,
-	godot.CanvasItem,
-	godot.Node,
+    godot.Node,
 	godot.Object,
 	godot.core.KtObject,
 	kotlin.Any
@@ -20,5 +18,5 @@ properties = [
     
 ]
 functions = [
-    _ready
+    on_mouse_entered
 ]

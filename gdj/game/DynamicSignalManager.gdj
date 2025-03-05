@@ -19,6 +19,7 @@ properties = [
 ]
 functions = [
     _ready,
-	on_child_entered,
-	on_child_exiting
+	on_child_entered_tree,
+	connect_cached_signals,
+	on_child_exiting_tree
 ]
