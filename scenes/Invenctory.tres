@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dj5h61lg6ml70"]
+
+[ext_resource type="FontFile" uid="uid://c5ysehpj2av5v" path="res://pixel-dungeons.ttf" id="1_22jmt"]
+
+[resource]
+font = ExtResource("1_22jmt")
+font_size = 8

@@ -15,6 +15,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+    implementation("io.github.cdimascio:dotenv-kotlin:6.2.2")
 
 }
 

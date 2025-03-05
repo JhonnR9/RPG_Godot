@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bdfbup5xwacwf"]
+[gd_scene load_steps=8 format=4 uid="uid://bdfbup5xwacwf"]
 
 [ext_resource type="Script" path="res://src/main/kotlin/game/core/DynamicSignalManager.kt" id="1_gv1jw"]
 [ext_resource type="PackedScene" uid="uid://210hyde6udnd" path="res://scenes/player.tscn" id="1_obf8p"]
 [ext_resource type="Script" path="res://src/main/kotlin/game/UTest.kt" id="1_t5nyl"]
 [ext_resource type="Texture2D" uid="uid://dw1uoy4y5hak0" path="res://images/Tileset_Road.png" id="4_72jgh"]
+[ext_resource type="PackedScene" uid="uid://cqsjstxolmv16" path="res://scenes/Invenctory.tscn" id="5_i0quj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1krn7"]
 resource_name = "Terrain"
@@ -418,9 +419,23 @@ script = ExtResource("1_t5nyl")
 
 [node name="Player" parent="." instance=ExtResource("1_obf8p")]
 z_index = 2
-position = Vector2(121, 141)
+position = Vector2(160, 88)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(1.05596, 0.926808)
 tile_map_data = PackedByteArray("AAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAAIAAUAAAACAAEAAAAJAAUAAAAAAAkAAAAHAAUAAAABAAkAAAAHAAYAAAACAAkAAAAIAAYAAAABAAkAAAAJAAYAAAAAAAgAAAAGAAYAAAABAAgAAAAFAAYAAAACAAgAAAAGAAcAAAACAAkAAAAHAAcAAAABAAkAAAAIAAcAAAAAAAkAAAAJAAcAAAAAAAgAAAAKAAUAAAACAAkAAAAKAAYAAAAAAAgAAAAKAAcAAAACAAgAAAALAAUAAAACAAgAAAALAAQAAAACAAAAAAAMAAQAAAADAAAAAAALAAYAAAABAAgAAAAKAAgAAAABAAgAAAAMAAYAAAAAAAgAAAAMAAUAAAAAAAUAAAANAAUAAAADAAAAAAANAAYAAAADAAEAAAAMAAcAAAAAAAQAAAALAAcAAAABAAgAAAALAAgAAAAAAAQAAAANAAcAAAADAAIAAAAMAAgAAAADAAIAAAALAAkAAAADAAIAAAAKAAkAAAAAAAQAAAAJAAkAAAACAAgAAAAIAAgAAAABAAgAAAAJAAgAAAABAAkAAAAHAAgAAAACAAEAAAAGAAgAAAABAAgAAAAGAAkAAAACAAIAAAAFAAkAAAACAAIAAAAIAAkAAAABAAgAAAAHAAkAAAABAAQAAAAEAAkAAAAAAAQAAAAKAAoAAAADAAIAAAAJAAoAAAACAAIAAAAIAAoAAAACAAIAAAAHAAoAAAABAAIAAAAFAAgAAAACAAgAAAAFAAcAAAACAAEAAAAEAAcAAAAAAAgAAAADAAcAAAABAAkAAAACAAcAAAAAAAkAAAADAAgAAAAAAAgAAAACAAgAAAABAAkAAAAEAAgAAAACAAkAAAADAAkAAAABAAQAAAACAAkAAAACAAIAAAAEAAoAAAADAAIAAAADAAoAAAABAAIAAAAGAAUAAAABAAgAAAAEAAUAAAACAAEAAAAFAAUAAAACAAgAAAACAAYAAAAAAAgAAAADAAUAAAABAAUAAAABAAYAAAAEAAUAAAAAAAYAAAABAAMAAAACAAUAAAACAAAAAAAEAAYAAAABAAgAAAAFAAQAAAAEAAQAAAADAAYAAAABAAkAAAAEAAQAAAACAAAAAAAFAAMAAAAAAAAAAAADAAQAAAABAAAAAAAGAAQAAAACAAAAAAABAAcAAAABAAEAAAABAAUAAAABAAAAAAABAAgAAAABAAEAAAABAAkAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_sxv1q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Invetory" parent="CanvasLayer" instance=ExtResource("5_i0quj")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 36.0
+offset_right = -58.0
+offset_bottom = 36.0
+scale = Vector2(0.6, 0.6)

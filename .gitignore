@@ -8,3 +8,4 @@ build
 jre
 jre-amd64-windows/
 export
+src/main/kotlin/.env

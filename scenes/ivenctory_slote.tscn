@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cskyfn484tp5n"]
+
+[ext_resource type="Texture2D" uid="uid://b1dfpkx73sk27" path="res://images/square.png" id="1_cxc4x"]
+[ext_resource type="FontFile" uid="uid://b1qbvmjv8x1f3" path="res://SHPinscher-Regular.otf" id="1_m2qht"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1i7k"]
+bg_color = Color(0.894118, 0.65098, 0.447059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.243137, 0.152941, 0.192157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2d0v"]
+font = ExtResource("1_m2qht")
+font_color = Color(0, 0, 0, 1)
+
+[node name="slote" type="PanelContainer"]
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_cxc4x")
+
+[node name="quantity" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "00"
+label_settings = SubResource("LabelSettings_d2d0v")
+vertical_alignment = 2

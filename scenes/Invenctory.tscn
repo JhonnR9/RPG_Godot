@@ -1,0 +1,274 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqsjstxolmv16"]
+
+[ext_resource type="Texture2D" uid="uid://b1dfpkx73sk27" path="res://images/square.png" id="1_c810o"]
+[ext_resource type="Script" path="res://src/main/kotlin/game/InventoryUI.kt" id="1_publb"]
+[ext_resource type="LabelSettings" uid="uid://dj5h61lg6ml70" path="res://scenes/Invenctory.tres" id="2_3w77p"]
+[ext_resource type="FontFile" uid="uid://c5ysehpj2av5v" path="res://pixel-dungeons.ttf" id="2_i8xd2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37pvn"]
+bg_color = Color(0.72, 0.43272, 0.3096, 0.568627)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.243137, 0.152941, 0.192157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_top = 6.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_nlefq"]
+font = ExtResource("2_i8xd2")
+font_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1i7k"]
+bg_color = Color(0.894118, 0.65098, 0.447059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.243137, 0.152941, 0.192157, 1)
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_publb")
+
+[node name="Inventory" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -63.0
+offset_right = 67.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_37pvn")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Inventory"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Inventory/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Invenctory
+"
+label_settings = SubResource("LabelSettings_nlefq")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VSplitContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 4
+
+[node name="slote" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "
+"
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote2" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote2"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote3" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote3"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote4" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote4"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote4"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote5" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote5"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote5"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote6" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote6"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote6"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote7" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote7"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote7"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote8" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote8"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote8"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote9" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote9"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote9"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote10" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote10"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote10"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote11" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote11"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote11"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2
+
+[node name="slote12" type="PanelContainer" parent="Inventory/VSplitContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1i7k")
+
+[node name="item_icon" type="TextureRect" parent="Inventory/VSplitContainer/GridContainer/slote12"]
+layout_mode = 2
+texture = ExtResource("1_c810o")
+
+[node name="quantity" type="Label" parent="Inventory/VSplitContainer/GridContainer/slote12"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = ExtResource("2_3w77p")
+vertical_alignment = 2

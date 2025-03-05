@@ -1,16 +1,16 @@
 package game
 
 import JsonDataParse
-import game.core.ConnectSignal
+import game.repository.Repository
 import godot.Input
 import godot.Node
-import godot.ProjectSettings
 import godot.annotation.RegisterClass
 import godot.annotation.RegisterFunction
 import godot.annotation.RegisterSignal
 import godot.core.StringName
 import godot.core.signal1
 import godot.global.GD
+import kotlinx.serialization.json.Json
 
 
 @RegisterClass
@@ -22,14 +22,18 @@ class UTest: Node() {
     override fun _ready() {
         super._ready()
         val json = JsonDataParse("src/main/resources/NPCs.json")
-        GD.print(json.data.characters[0].name)
+        val file = Json.encodeToString(json.data)
+        val repository = Repository()
+        repository.save(file)
+        val text = repository.getData()
+        GD.print(text)
     }
 
     @RegisterFunction
     override fun _process(delta: Double) {
         super._process(delta)
         if (Input.isActionJustPressed(StringName("Test"))) {
-            uiTest.emitSignal(999)
+            //uiTest.emitSignal(999)
         }
     }
 

@@ -1,8 +1,0 @@
-.godot/
-/android/
-.gradle
-.kotlin
-.idea
-build
-jre
-jre-amd64-windows/
